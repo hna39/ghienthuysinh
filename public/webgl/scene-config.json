@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "strokeGap": 240,
+  "draw": {
+    "duration": 5205,
+    "initialProgress": 0,
+    "autoplay": false
+  },
+  "depth": {
+    "mode": "group-tilt",
+    "axes": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
+  },
+  "camera": {
+    "x": -2.15,
+    "y": -1.2,
+    "z": -1.5
+  },
+  "perspective": {
+    "enabled": true
+  },
+  "fog": {
+    "enabled": false,
+    "nearOffset": -0.05,
+    "farOffset": 0.38,
+    "color": "#f7f8fa"
+  },
+  "wave": {
+    "enabled": true,
+    "strength": 0.06
+  },
+  "style": {
+    "strokeColor": "#111111"
+  },
+  "background": {
+    "type": "none",
+    "name": ""
+  },
+  "assets": [
+    {
+      "id": "asset-muaxf9kn-r3p4m",
+      "name": "stroke-preview-2026-09-21T06-03-44-253Z.json",
+      "visible": true,
+      "strokeSrc": "data/stroke-preview-2026-09-21T06-03-44-253Z.json",
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "scale": 1,
+        "rotationX": 0,
+        "rotationY": 0,
+        "rotationZ": 0
+      }
+    }
+  ]
+}

@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
+/* Bộ nhận diện Ghiền Thủy Sinh */
+@theme {
+  --color-reu: #003c26;        /* xanh rêu chủ đạo */
+  --color-reu-dam: #033e2a;    /* nền hình minh hoạ */
+  --color-reu-nhat: #1f4a36;
+  --color-kem: #f3e5de;        /* nền trang */
+  --color-kem-nhat: #ede6d6;   /* nét vẽ kem */
+  --color-vang: #d8c48e;       /* điểm nhấn vàng */
+  --color-sage: #8fb08a;
+  --color-loi: #b3261e;        /* báo lỗi */
+
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-be-vietnam), system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-kem);
+  color: var(--color-reu);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tiêu đề dùng Playfair Display */
+h1,
+h2,
+h3,
+.font-tieu-de {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--color-vang);
+  color: var(--color-reu);
+}
+
+/* Vòng focus rõ ràng cho bàn phím */
+:focus-visible {
+  outline: 2px solid var(--color-vang);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

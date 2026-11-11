@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ghiền Thủy Sinh — web chính (Next.js)
 
-## Getting Started
+Trang giới thiệu + sàn trưng bày cá cảnh & thủy sinh trên **ghienthuysinh.com**.
+Danh sách chức năng đầy đủ: `../KE-HOACH-CHUC-NANG.md`.
 
-First, run the development server:
+## Chạy trên máy
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Mở http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Kết nối Supabase (khi có tài khoản)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Tạo project tại https://supabase.com (chọn vùng Singapore cho gần Việt Nam).
+2. SQL Editor → dán toàn bộ `supabase/migrations/0001_init.sql` → Run.
+3. Sao chép `.env.example` thành `.env.local`, điền URL và anon key (Project Settings → API).
 
-## Learn More
+## Cấu trúc
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/` — các trang (mỗi thư mục là một đường dẫn, ví dụ `src/app/combo/[slug]` → `/combo/ten-combo`)
+- `src/components/` — thành phần giao diện dùng chung (header, footer, logo...)
+- `src/lib/site.ts` — tên trang, menu, link liên hệ
+- `src/lib/supabase/` — kết nối cơ sở dữ liệu
+- `supabase/migrations/` — cấu trúc cơ sở dữ liệu
+- `public/` — logo, hình minh hoạ, ảnh
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Ghi chú kỹ thuật
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 16: `params`, `searchParams`, `cookies()` đều phải `await`; file `middleware` đổi tên thành `proxy`.
+- Không bật `cacheComponents` (xem `next.config.ts`).
